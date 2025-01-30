@@ -1,10 +1,12 @@
 <template>
   <div>
-    <h1>Contact</h1>
+    <ContactForm />
+
   </div>
 </template>
 
 <script setup>
+import ContactForm from '~/components/ContactForm.vue';
 </script>
 
 <style scoped>
