@@ -1,45 +1,43 @@
 <template>
   <header class="header">
-    <NuxtLink to="/" class="logo">
-      <img src="/img/logo.png" alt="Website Logo" class="logo-image" />
+    <NuxtLink v-if="!isIndexPage" to="/" class="logo-link">
+      <img v-if="!isIndexPage" src="/assets/images/logo.png" alt="Logo" class="logo" />
     </NuxtLink>
-
-    <BurgerMenu />
+    <NavBar />
   </header>
 </template>
 
-<script>
-import BurgerMenu from '~/components/BurgerMenu.vue';
+<script setup>
+import { ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import NavBar from '~/components/NavBar.vue';
 
-export default {
-  name: 'Head',
-  components: {
-    BurgerMenu,
-  },
-};
+const route = useRoute();
+const isIndexPage = ref(route.path === '/');
+
+watch(route, (newRoute) => {
+  isIndexPage.value = newRoute.path === '/';
+});
 </script>
 
 <style scoped>
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.logo-link {
+  position: absolute;
+  top: 40px;
+  left: 60px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo-image {
-  height: 120px;
-  width: auto;
-  padding: 40px 40px;
+  width: 200px;
+  height: auto;
 }
 </style>
+

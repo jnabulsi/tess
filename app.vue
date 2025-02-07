@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <AppHeader />
     <main class="main-content">
       <NuxtPage />
@@ -21,26 +21,31 @@ body {
   padding: 0;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-  background-color: #8DA2D0;
-}
-
-.main-content {
-  padding-top: 160px;
+  display: flex;
+  flex-direction: column;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Media query for screens smaller than 768px (typical mobile screens) */
-@media only screen and (max-width: 768px) {
-  .title {
-    width: 90%;
-  }
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-p {
-  color: whitesmoke;
-  line-height: 2em;
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
 }
 </style>
+

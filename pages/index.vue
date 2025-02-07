@@ -1,19 +1,50 @@
 <template>
-  <div>
-    <HomeImage />
-    <FlashingText />
-    <ShowreelBio />
-
+  <div class="image-container">
+    <img src="/assets/images/logo.png" alt="Tess" class="tess-image" />
+    <img src="/assets/images/center.png" alt="Home Image" class="home-image" />
   </div>
 </template>
 
 <script setup>
-import HomeImage from '~/components/HomeImage.vue';
-import FlashingText from '~/components/FlashingText.vue';
-import ShowreelBio from '~/components/ShowreelBio.vue';
-
 </script>
 
 <style scoped>
-/* Add styles here */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 50px 20px;
+  margin-top: -100px;
+}
+
+/* Ensure images scale correctly */
+.image-container img {
+  flex: 1;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Adjustments for different images */
+.tess-image {
+  max-width: 45%;
+}
+
+.home-image {
+  max-width: 35%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container img {
+    max-width: 80%;
+  }
+}
 </style>
+
