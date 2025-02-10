@@ -41,7 +41,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
 }
 
 footer {
