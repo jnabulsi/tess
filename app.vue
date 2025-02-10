@@ -13,8 +13,8 @@ import AppHeader from '~/components/AppHeader.vue';
 import AppFooter from '~/components/AppFooter.vue';
 </script>
 
-<style>
 html,
+<style>
 body {
   height: 100%;
   margin: 0;
@@ -23,6 +23,7 @@ body {
   font-weight: 300;
   display: flex;
   flex-direction: column;
+  background: #ededed;
 }
 
 html {
@@ -48,4 +49,3 @@ footer {
   padding: 20px;
 }
 </style>
-

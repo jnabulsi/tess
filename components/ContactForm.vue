@@ -1,5 +1,6 @@
 <template>
-  <div class="form-wrapper">
+  <div class="form-container">
+    <h2 class="form-title">Contact</h2>
     <form @submit.prevent="submitForm">
       <label for="name">Name:</label>
       <input type="text" id="name" v-model="form.name" required />
@@ -55,12 +56,25 @@ export default {
 </script>
 
 <style scoped>
-/* Outer wrapper to center everything */
-.form-wrapper {
+.form-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Title for the contact form */
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 /* Labels */
@@ -130,3 +144,4 @@ button:hover {
   margin-top: 10px;
 }
 </style>
+
